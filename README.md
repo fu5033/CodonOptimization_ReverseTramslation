@@ -28,13 +28,13 @@
 
 三、Dataset Details
 --------------
-  Source: NCBI RefSeq，大肠杆菌 CDS 编码区
+  Source: NCBI RefSeq，E. coli CDS Coding Regions
   Strains: MG1655 + BW2952 + DH1 + DH10B
-  Total Sequences: 10,110 条（过滤：50 <= 氨基酸长度 <= 500）
+  Total Sequences: 10,110 sequences（Filtered:50 <= amino acid length <= 500）
   Dataset Split (Random Seed = 42):
-    Training Set: 7,582 条  (75%)
-    Validation Set: 1,264 条  (12.5%)
-    Test Set: 1,264 条  (12.5%)
+    Training Set: 7,582 sequences  (75%)
+    Validation Set: 1,264 sequences  (12.5%)
+    Test Set: 1,264 sequences  (12.5%)
   Data Format (JSON Array, each record contains):
     - strain:  Strain name（e.g., "MG1655"）
     - protein: Amino acid sequence（e.g., "MKKI..."）
@@ -42,7 +42,7 @@
     - aa_len:  Amino acid sequence length
     - dna_len: Codon sequence length（= aa_len * 3）
 
-四、模型架构
+四、Model Architecture
 ------------
   BackTranslationModel:
     ┌───────────────────────────────────────────────────┐
