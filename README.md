@@ -44,28 +44,28 @@
 
 四、Model Architecture
 ------------
-  BackTranslationModel:
-    ┌───────────────────────────────────────────────────┐
-    │  Input: 52-dimensional feature vector             │
-    │    [0-19]  AA one-hot (20-dim)                    │
-    │   [20-22]  Secondary structure heuristic (3-dim)  │
-    │     [23]   Hydrophobicity (1-dim)                 │
-    │     [24]   Conservation (1-dim)                   │
-    │     [25]   Relative position (1-dim)              │      
-    │     [26]   sin positional encoding (1-dim)        │
-    │   [27-31]  Codon frequency prior (5-dim)          │
-    ├───────────────────────────────────────────────────┤
-    │  BiLSTM (2layers, h=128, bidirectional, dr=0.3)   │
-    ├───────────────────────────────────────────────────┤
-    │  LayerNorm (hidden*2 = 256)                       │
-    ├───────────────────────────────────────────────────┤
-    │  MultiheadAttention (4 heads, dr=0.3)             │
-    ├───────────────────────────────────────────────────┤
-    │  残差连接: LSTM_out + Attn_out                    │
-    ├───────────────────────────────────────────────────┤
-    │  FC Layers (256→128→64 output classes)            │
-    │  Includes ReLU + Dropout                          │
-    └───────────────────────────────────────────────────┘
+BackTranslationModel:
+┌───────────────────────────────────────────────────┐
+│  Input: 52-dimensional feature vector             │
+│    [0-19]  AA one-hot (20-dim)                    │
+│   [20-22]  Secondary structure heuristic (3-dim)  │
+│     [23]   Hydrophobicity (1-dim)                 │
+│     [24]   Conservation (1-dim)                   │
+│     [25]   Relative position (1-dim)              │
+│     [26]   sin positional encoding (1-dim)        │
+│   [27-31]  Codon frequency prior (5-dim)          │
+├───────────────────────────────────────────────────┤
+│  BiLSTM (2layers, h=128, bidirectional, dr=0.3)   │
+├───────────────────────────────────────────────────┤
+│  LayerNorm (hidden*2 = 256)                       │
+├───────────────────────────────────────────────────┤
+│  MultiheadAttention (4 heads, dr=0.3)             │
+├───────────────────────────────────────────────────┤
+│  残差连接: LSTM_out + Attn_out                    │
+├───────────────────────────────────────────────────┤
+│  FC Layers (256 -> 128 -> 64 output classes)      │
+│  Includes ReLU + Dropout                          │
+└───────────────────────────────────────────────────┘
 
   Output Classes: 64 codons (including stop codons, contains T)
   Parameter size: Approx 1,000,000+
