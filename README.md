@@ -194,8 +194,7 @@ BackTranslationModel:
   │ v4_max500    │ 62-dim + pack_padded + LEN=500        │   57.75%*    │
   │ v4_resume    │ Same as above, resumed training to E10│   58.98%*    │
   └──────────────┴───────────────────────────────────────┴──────────────┘
-```
-```text
+
   * The training process was unstable on the CPU and did not complete all 50 epochs.
 
   Recommendation: Running on a GPU can drastically accelerate training and allow for experimenting with larger models.
