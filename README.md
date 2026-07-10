@@ -1,7 +1,8 @@
-================================================================================
-  E. coli Back-Translation Model — Real Multi-Strain CDS Training Project
-  fuhg2026-6
-================================================================================
+# E. coli Back-Translation Model — Real Multi-Strain CDS Training Project
+
+**fuhg2026-6**
+
+---
 
 一、Project Overview
 ------------
@@ -199,7 +200,4 @@ BackTranslationModel:
 
   Recommendation: Running on a GPU can drastically accelerate training and allow for experimenting with larger models.
 ```
-================================================================================
-  Generation Date：2026-06-12
-  Author：fuhg
-================================================================================
+> **Generated:** 2026-06-12 · **Author:** fuhg
